@@ -1,68 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr-RS">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Lawyer Office Name</title>
+    <title>Advokatska Kancelarija Zaric</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/14a47c56a8.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <header>
+    <div class="top-header">
         <div class="container">
+            <div class="top-header-info">
+                <span><i class="fas fa-phone top-header-icon phone-icon"></i>+381640651063</span>
+                <span><i class="fas fa-envelope top-header-icon email-icon"></i>zaric.advokat@gmail.com</span>
+                <span><i class="fas fa-clock top-header-icon clock-icon"></i> Pot - Pet 09:00 - 15:00</span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="headercontainer">
             <div class="logo">
-                <img src="images/your-logo.png" alt="Lawyer Logo">
+                <img src="images/Logo_NoBG.png" alt="Lawyer Logo">
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Areas of Practice</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">Naslovna</a></li>
+                    <li><a href="#about">O Nama</a></li>
+                    <li><a href="#services">Oblasti prava</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="home" class="content-section">
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <div class="container">
+                <h1>Advokat Novi Sad</h1>
+                <p>Advokatska kancelarija Zarić osnovana je sa sedištem u Novom Sadu i pruža stručnu i efikasnu pravnu
+                    pomoć na teritoriji čitave Republike Srbije, Crne Gore i Republike Srpske. Kontaktirajte nas putem
+                    veb sajta i zakazite termin za pravne konsultacije..</p>
+            </div>
+        </div>
+        <div class="hero-content"> </div>
+
+
+
+        </div>
+        </div>
+    </section>
+    <section class="overlap-section">
+        <div class="overlap-columns">
+            <div class="overlap-left">
+            </div>
+            <div class="overlap-right">
+                Advokatska kancelarija Zarić osnovana je sa sedištem u Novom Sadu i pruža stručnu i efikasnu pravnu
+                    pomoć na teritoriji čitave Republike Srbije, Crne Gore i Republike Srpske. Kontaktirajte nas putem
+                    veb sajta i zakazite termin za pravne konsultacije..
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h1>Welcome to Our Law Office</h1>
-            <p>Your trusted legal partners.</p>
+            <h2>Kontakt</h2>
+            <p>Email: zaric.advokat@gmail.com</p>
+            <p>Phone: +381640651063</p>
+            <p>Address: Dalmatinska 36, Novi Sad</p>
         </div>
     </section>
 
-    <section id="about" class="content-section">
+    <section id="form" class="form-section">
         <div class="container">
-            <h2>About Us</h2>
-            <p>Your bio and information about your office.</p>
+            <h2>Form</h2>
+            <form id="contactForm" action="YOUR_FORM_ACTION_URL" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </section>
 
-    <section id="services" class="content-section">
-        <div class="container">
-            <h2>Areas of Practice</h2>
-            <ul>
-                <li>Criminal Law</li>
-                <li>Family Law</li>
-                <li>Corporate Law</li>
-                <li>...</li>
-            </ul>
+    <section id="map" class="full-width-map map-section">
+        <div class="map-container">
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11235.754532597219!2d19.80473097686866!3d45.24903368713745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b11927ff4430d%3A0x8f0bebed0264d6b6!2sAdvokatska%20kancelarija%20Zari%C4%87!5e0!3m2!1sen!2srs!4v1742170972127!5m2!1sen!2srs"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </section>
 
-    <section id="contact" class="content-section">
+    <section id="info" class="info-section">
         <div class="container">
-            <h2>Contact Us</h2>
-            <p>Email: your-email@example.com</p>
-            <p>Phone: +1 (123) 456-7890</p>
-            <p>Address: 123 Main Street, City, State</p>
+            <h2>Info</h2>
+            <p>Additional information here.</p>
         </div>
     </section>
 
     <footer>
-      <div class="container">
-        <p>&copy; 2024 Your Lawyer Office. All rights reserved.</p>
-      </div>
+        <div class="container">
+            <p>© 2024 Your Lawyer Office. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
+
 </html>
