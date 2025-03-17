@@ -186,9 +186,9 @@ nav a:hover {
     /* Styles for the right column content */
     background-color: rgb(255, 255, 255); /* Example background */
     padding: 5px 20px 20px 20px;
-    font-size: 30px;
+    font-size: 25px;
      height:500px;
-       border: 1px solid #3375d8dc; /* Add this line */
+       /* border: 1px solid #3375d8dc; Add this line */
     /* border: 1px solid #3375d8dc; Add this line */
 }
 /* Footer */
@@ -219,6 +219,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Top Header */
     .top-header-info {
         flex-direction: column;
         align-items: center;
@@ -228,28 +229,68 @@ footer {
         margin: 5px 0;
     }
 
-    header .container {
+    /* Navigation */
+    header .headercontainer {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     nav ul {
         flex-direction: column;
         width: 100%;
-        margin-top: 10px;
+        text-align: center;
     }
 
     nav ul li {
-        margin-left: 0;
-        margin-top: 10px;
+        margin: 10px 0;
     }
 
+    /* Hero Section */
     .hero {
-        height: 300px;
+        height: auto; /* Allow height to adjust */
+        padding: 20px; /* Add padding */
+    }
+
+    .hero-text {
+        padding-top: 20px; /* Adjust padding */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Reduce font size */
+    }
+
+    .hero p {
+        font-size: 16px; /* Reduce font size */
+    }
+
+    /* Overlap Section */
+    .overlap-section {
+        width: 90%; /* Adjust width */
+        margin-top: 20px; /* Adjust margin */
+    }
+
+    .overlap-columns {
+        grid-template-columns: 1fr; /* Stack columns vertically */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .overlap-left,
+    .overlap-right {
+        height: auto; /* Allow height to adjust */
+    }
+
+    /* Contact, Form, Map, Info Sections */
+    .container {
+        padding: 10px; /* Reduce padding */
     }
 
     .map-container iframe {
-        height: 300px;
+        height: 300px; /* Adjust map height */
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px; /* Reduce padding */
     }
 }
 
