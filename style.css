@@ -250,15 +250,24 @@ header .logo img {
 }
 
 .hero-text {
-    position: absolute;
+     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 2;
     text-align: center;
-    padding-top: 100px;
     box-sizing: border-box;
+    color: white;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: left;
+ 
+    
 }
 
 /* Overlap Section */
@@ -278,13 +287,16 @@ header .logo img {
 .overlap-left {
     background-image: url('../images/pfp.png');
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(200, 200, 200, 0.8);
     padding:0px;
 
 }
-
+.hero-content-wrapper {
+    max-width: 1024px;
+    margin: 0 auto; /* Center the wrapper */
+}
 .overlap-right {
     background-color: #e6e6e9;
     padding: 5px 20px 20px 20px;
