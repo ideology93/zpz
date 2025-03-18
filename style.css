@@ -259,7 +259,7 @@ header .logo img {
     text-align: center;
     box-sizing: border-box;
     color: white;
-    font-size: 35px;
+    font-size: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -395,7 +395,8 @@ footer {
     }
 
     .hero-text {
-        padding-top: 50px;
+        font-size: 24px;
+        padding: 10px;
     }
 
     /* Overlap section adjustments */
@@ -441,7 +442,9 @@ footer {
         font-size: 20px;
         min-height: 300px;
     }
-
+    .hero-text {
+        font-size: 20px;
+    }
     .hero h1 {
         font-size: 24px;
     }
