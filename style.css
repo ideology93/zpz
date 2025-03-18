@@ -24,21 +24,18 @@ body {
     background-color: #e0e0e0;
     padding: 5px 0;
     font-size: 1em;
-
 }
 
 .top-header-info {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
 }
 
 .top-header-info span {
     margin: 0 15px;
     display: inline-flex;
     align-items: center;
-
 }
 
 /* Main Header */
@@ -64,33 +61,167 @@ header .logo img {
     padding-top: 5px;
 }
 
-nav ul {
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    /* Take up remaining space */
+    margin-left: 20px;
+    /* Add spacing between logo and nav */
+}
+
+.desktop-nav ul {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
-nav ul li {
+.desktop-nav ul li {
     margin-left: 20px;
-    margin-right: 30px;
-    /* Add right margin */
 }
 
-nav a {
+.desktop-nav a {
     color: #333;
     text-decoration: none;
-    /* Add this line */
 }
 
-nav a:hover {
+.desktop-nav a:hover {
     text-decoration: underline;
-    /* Underline on hover */
 }
-.hero h1 {
-    color: white;
+
+/* Hide Desktop Navigation on Mobile */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
 }
-.hero p {
-    color: white; /* Change this to your desired color */
+
+/* Hamburger Menu (Mobile Only) */
+.menu-toggle {
+    display: none;
+    /* Hidden by default */
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
 }
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        /* Show hamburger menu on mobile */
+    }
+}
+
+/* Off-Canvas Menu (Mobile Only) */
+.offcanvas-menu {
+    display: none;
+    /* Hidden by default */
+}
+
+@media (max-width: 768px) {
+    .offcanvas-menu {
+        display: block;
+        /* Show off-canvas menu on mobile */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: #1f1f1f;
+        box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: right 0.3s ease-in-out;
+    }
+
+    .offcanvas-menu.active {
+        right: 0;
+    }
+
+    .close-btn {
+        /* Add this */
+        position: absolute;
+        top: 20px;
+        left: 60px;
+        font-size: 3em;
+        color: #ebeaea;
+        cursor: pointer;
+    }
+
+    .offcanvas-menu nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin: 0;
+        list-style: none;
+        padding-top: 80px;
+    }
+
+    .offcanvas-menu nav ul li {
+        margin: 10px 0;
+        position: relative;
+        /* Add this */
+    }
+
+    .offcanvas-menu nav a {
+        display: block;
+        padding: 10px 0;
+        padding-left: 2.5em;
+        font-size: 18px;
+        color: #ebeaea;
+        text-decoration: none;
+    }
+
+    .offcanvas-menu nav a:hover {
+        text-decoration: underline;
+    }
+
+    .offcanvas-menu nav ul li::after {
+        /* Add this */
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        /* Adjust for 80% width */
+        width: 80%;
+        height: 1px;
+        /* Adjust underline thickness */
+        background-color: #ebeaea;
+        /* Underline color */
+    }
+
+    /* Push main content to the left */
+    .main-content {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .offcanvas-menu.active~.main-content {
+        transform: translateX(-80%);
+    }
+
+    /* Overlay */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+}
+
 /* Hero Section */
 .hero {
     background-image: url('images/hero_bg_1.jpg');
@@ -106,6 +237,7 @@ nav a:hover {
     font-size: 40px;
     position: relative;
 }
+
 .hero::before {
     content: "";
     position: absolute;
@@ -113,88 +245,63 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (0.5) as needed */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
-.hero-text { /* Add this */
-    position: absolute; /* Change to absolute */
-    top: 0; /* Add this */
-    left: 0; /* Add this */
+
+.hero-text {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 2;
     text-align: center;
     padding-top: 100px;
-    box-sizing: border-box; /* Add this */
-}
-/* Contact Section */
-.contact-section {
-    padding: 50px 0;
-    /* Add unique styles for contact section */
+    box-sizing: border-box;
 }
 
-/* Form Section */
-.form-section {
-    padding: 50px 0;
-    /* Add unique styles for form section */
-}
-
-/* Map Section */
-.full-width-map.map-section {
-    width: 100%;
-    /* Add unique styles for map section */
-}
-
-.map-container {
-    width: 100%;
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 400px;
-    border: 0;
-}
-
-/* Info Section */
-.info-section {
-    padding: 50px 0;
-    /* Add unique styles for info section */
-}
+/* Overlap Section */
 .overlap-section {
-    width: 60%; /* Take up 40% of the screen width */
-    margin: -50px auto 0; /* Negative top margin to overlap, auto margins to center */
-    position: relative; /* Needed for z-index */
-    z-index: 10; /* Ensure it's above the hero section */
-    
+    width: 60%;
+    margin: -50px auto 0;
+    position: relative;
+    z-index: 10;
 }
 
 .overlap-columns {
     display: grid;
-    height:500px;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    height: 500px;
+    grid-template-columns: 1fr 1fr;
 }
 
 .overlap-left {
-    /* Styles for the left column content */
-    background-image: url('images/IMG_5281-cropped.jpg');
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat; /* Add this line */
+    background-image: url('../images/pfp.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-color: rgba(200, 200, 200, 0.8);
-    padding: 20px;
-    border: 1px solid #3375d8dc; /* Add this line */
-   
+    padding:0px;
+
 }
 
 .overlap-right {
-    /* Styles for the right column content */
-    background-color: rgb(255, 255, 255); /* Example background */
+    background-color: #e6e6e9;
     padding: 5px 20px 20px 20px;
-    font-size: 25px;
-  
-       /* border: 1px solid #3375d8dc; Add this line */
-    /* border: 1px solid #3375d8dc; Add this line */
+
+    font-size: 20px;
+
 }
+
+.overlap-right .first-paragraph {
+    border-bottom: 1px solid #000000;
+    /* Prilagodite debljinu, stil i boju */
+    padding-bottom: 10px;
+    /* Dodajte razmak između paragrafa i linije */
+    width: 300px;
+    /* Prilagodite širinu linije */
+}
+
 /* Footer */
 footer {
     background-color: #f0f0f0;
@@ -222,11 +329,27 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .overlap-section {
+        width: 80%;
+    }
+
+    .overlap-columns {
+        height: auto;
+    }
+
+    .overlap-left {
+        height: 300px;
+    }
+}
+
 @media (max-width: 768px) {
+
     /* Header adjustments */
     header {
         height: auto;
         padding: 10px 0;
+        position: relative;
     }
 
     header .logo img {
@@ -234,23 +357,21 @@ footer {
         padding-top: 0;
     }
 
-    /* Navigation hamburger menu */
-    nav {
-        width: 100%;
-        display: none;
-    }
-
-    nav.active {
-        display: block;
-    }
-
-    nav ul {
+    /* Top Header Info adjustments */
+    .top-header-info {
         flex-direction: column;
-        padding: 0;
+        align-items: flex-start;
+        gap: 10px;
     }
 
-    nav ul li {
-        margin: 5px 0;
+    .top-header-info span {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .top-header-info span i {
+        margin-right: 8px;
     }
 
     /* Hero section adjustments */
@@ -267,8 +388,7 @@ footer {
 
     /* Overlap section adjustments */
     .overlap-section {
-        width: 95%;
-        margin-top: -25px;
+        width: 90%;
     }
 
     .overlap-columns {
@@ -279,6 +399,10 @@ footer {
     .overlap-right {
         font-size: 18px;
         padding: 20px;
+    }
+
+    .overlap-left {
+        height: 500px;
     }
 
     /* Contact info adjustments */
@@ -299,6 +423,7 @@ footer {
 }
 
 @media (max-width: 480px) {
+
     /* Further mobile adjustments */
     .hero {
         font-size: 20px;
@@ -315,19 +440,6 @@ footer {
 
     .top-header-info span:nth-child(3) {
         display: none;
-    }
-}
-
-/* Add hamburger menu */
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
     }
 }
 
