@@ -285,7 +285,7 @@ header .logo img {
 }
 
 .overlap-left {
-    background-image: url('../images/pfp.png');
+    background-image: url('images/pfp.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
