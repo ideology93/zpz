@@ -1,5 +1,26 @@
+html {
+    scroll-behavior: smooth;
+
+}
+
+@font-face {
+    font-family: 'Castoro Regular';
+    /* The name you'll use in your CSS */
+    src: url('fonts/Castoro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Regular';
+    /* The name you'll use in your CSS */
+    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Roboto Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0;
     padding: 0;
 }
@@ -84,12 +105,15 @@ header .logo img {
 }
 
 .desktop-nav a {
-    color: #333;
+    color: rgb(47, 63, 115);
     text-decoration: none;
+    transition: 300ms;
+    border-bottom: 3px solid transparent;
 }
 
 .desktop-nav a:hover {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    border-color: rgb(47, 63, 115);
 }
 
 /* Hide Desktop Navigation on Mobile */
@@ -199,6 +223,7 @@ header .logo img {
     /* Push main content to the left */
     .main-content {
         transition: transform 0.3s ease-in-out;
+
     }
 
     .offcanvas-menu.active~.main-content {
@@ -250,7 +275,7 @@ header .logo img {
 }
 
 .hero-text {
-     position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -266,8 +291,8 @@ header .logo img {
     align-items: center;
     padding: 20px;
     text-align: left;
- 
-    
+
+
 }
 
 /* Overlap Section */
@@ -290,13 +315,16 @@ header .logo img {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(200, 200, 200, 0.8);
-    padding:0px;
+    padding: 0px;
 
 }
+
 .hero-content-wrapper {
     max-width: 1024px;
-    margin: 0 auto; /* Center the wrapper */
+    margin: 0 auto;
+    /* Center the wrapper */
 }
+
 .overlap-right {
     background-color: #e6e6e9;
     padding: 5px 20px 20px 20px;
@@ -367,6 +395,7 @@ footer {
     header .logo img {
         height: 100px;
         padding-top: 0;
+        padding-bot: 10px;
     }
 
     /* Top Header Info adjustments */
@@ -442,9 +471,11 @@ footer {
         font-size: 20px;
         min-height: 300px;
     }
+
     .hero-text {
         font-size: 20px;
     }
+
     .hero h1 {
         font-size: 24px;
     }
